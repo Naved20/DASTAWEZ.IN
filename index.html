@@ -63,34 +63,62 @@
             color: #555;
         }
 
+        .value-props {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .value-prop {
+            margin: 10px 20px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .value-prop span {
+            color: #2A6EBB;
+            font-weight: bold;
+        }
+
         .btn {
             background: #2A6EBB;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             border-radius: 5px;
             transition: 0.3s;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .btn:hover {
             background: #1E5BA3;
+            transform: scale(1.05);
         }
 
         /* Services Section */
+        .services-heading {
+            text-align: center;
+            padding-top: 40px;
+            color: #2A6EBB;
+            font-size: 32px;
+        }
+
         .services {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 40px 20px;
+            padding: 20px 20px 40px;
             background: #E6F0FA;
         }
 
         .service-card {
             background: white;
             padding: 20px;
-            margin: 10px;
+            margin: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 280px;
@@ -103,48 +131,191 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
+        .service-card h2 {
+            color: #2A6EBB;
+        }
+
+        .service-card ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .service-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            color: #2A6EBB;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit {
+            width: 250px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #E6F0FA;
+            transition: 0.3s;
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #2A6EBB;
+        }
+
         /* Offer Section */
         .offer {
             text-align: center;
             background: #FFD700;
             padding: 20px;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
             color: #222;
+        }
+
+        /* Resume Hub Section */
+        .resume-hub {
+            background: linear-gradient(135deg, #1E5BA3, #4682B4);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .resume-hub h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .resume-hub-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resume-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .resume-feature {
+            width: 45%;
+            margin: 10px;
+            text-align: left;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .resume-feature:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .resume-contact {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .resume-btn {
+            background: #FFD700;
+            color: #1E5BA3;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .resume-btn:hover {
+            background: #FFC500;
+            transform: scale(1.05);
         }
 
         /* Location Selection */
         .location {
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             background: white;
         }
 
+        .location h2 {
+            color: #2A6EBB;
+            margin-bottom: 20px;
+        }
+
         select {
-            padding: 10px;
+            padding: 12px;
             font-size: 16px;
             border: 2px solid #2A6EBB;
             border-radius: 5px;
+            width: 300px;
+            max-width: 90%;
+        }
+
+        #selectedLocation {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #444;
         }
 
         /* Contact Section */
         .contact {
             text-align: center;
-            padding: 30px;
-            background: white;
+            padding: 40px 20px;
+            background: #E6F0FA;
+        }
+
+        .contact h2 {
+            color: #2A6EBB;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         .contact a {
             text-decoration: none;
             background: #2A6EBB;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 5px;
             transition: 0.3s;
+            font-weight: bold;
+            font-size: 16px;
         }
 
         .contact a:hover {
             background: #1E5BA3;
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -152,8 +323,31 @@
             background: #1E5BA3;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             margin-top: 20px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+            }
+            
+            .nav a {
+                margin: 5px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .resume-feature {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -176,35 +370,113 @@
     <!-- Hero Section -->
     <div class="hero">
         <h1>Fast, Affordable & Hassle-Free!</h1>
-        <p>Print & Deliver: Notes, Resumes, Xerox & More</p>
-        <p>MP Online & Govt. Services: Domicile, PAN, Voter ID, etc.</p>
+        <p>Why visit a shop when you can get the same price at your doorstep?</p>
+        
+        <div class="value-props">
+            <div class="value-prop">🔹 <span>Print & Deliver</span> to College or Home</div>
+            <div class="value-prop">🔹 <span>MP Online & Govt Services</span> Without Hassle</div>
+            <div class="value-prop">🔹 <span>Fast, Reliable & Affordable</span> Solutions</div>
+        </div>
+        
         <a href="#" class="btn">Order Now</a>
     </div>
 
     <!-- Services Section -->
+    <h2 class="services-heading">📄 Our Services</h2>
     <div class="services">
         <div class="service-card">
-            <h2>📄 Print & Deliver</h2>
-            <p>Notes, Resumes, Xerox – Fast & Easy</p>
+            <h2>📄 Document Services</h2>
+            <ul>
+                <li>Assignments & Notes Printing</li>
+                <li>Resume & CV Printing</li>
+                <li>Xerox & Photocopies</li>
+                <li>Lamination & Binding</li>
+                <li>Spiral & Hard Binding</li>
+                <li>PVC ID Cards</li>
+            </ul>
         </div>
         <div class="service-card">
             <h2>🏛 MP Online Services</h2>
-            <p>Apply for PAN, Voter ID & More</p>
+            <ul>
+                <li>Domicile Certificate</li>
+                <li>Income & Caste Certificate</li>
+                <li>Birth & Death Certificate</li>
+                <li>PAN Card Applications</li>
+                <li>Voter ID Applications</li>
+                <li>Other Government Forms</li>
+            </ul>
         </div>
         <div class="service-card">
-            <h2>🚀 Doorstep Delivery</h2>
-            <p>Get Your Documents Without Hassle</p>
+            <h2>📝 Applications</h2>
+            <ul>
+                <li>Job Applications</li>
+                <li>Railway & SSC Forms</li>
+                <li>MPPSC & Vyapam Forms</li>
+                <li>Scholarship Applications</li>
+                <li>E-KYC Services</li>
+                <li>Other Online Services</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="why-choose">
+        <h2>🎯 Why Choose Dastawez?</h2>
+        <div class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">🚀</div>
+                <h3>Fast Delivery</h3>
+                <p>Same-Day or Next-Day Delivery – No More Waiting!</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <h3>Best Prices</h3>
+                <p>Lowest Prices Guaranteed with No Hidden Charges!</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🏠</div>
+                <h3>Doorstep Service</h3>
+                <p>No Need to Visit Cyber Cafés – We Do It for You!</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💳</div>
+                <h3>Easy Payments</h3>
+                <p>Secure UPI & Cash-on-Delivery Available!</p>
+            </div>
         </div>
     </div>
 
     <!-- Offer Section -->
     <div class="offer">
-        🎁 First 10 Customers Get ₹10 OFF! Hurry Up!
+        🎁 Limited Offer: First 10 Customers Get ₹10 OFF! Hurry Up!
+    </div>
+
+    <!-- Resume Hub Section -->
+    <div class="resume-hub">
+        <div class="resume-hub-content">
+            <h2>🚀 RESUME HUB - Craft Your Future! 🔥</h2>
+            <p>Need a professional resume? We've got you covered with affordable excellence!</p>
+            
+            <div class="resume-features">
+                <div class="resume-feature">Get a professional resume for just ₹49!</div>
+                <div class="resume-feature">Stand out to recruiters who scan resumes in 6 seconds</div>
+                <div class="resume-feature">Expert guidance highlighting your strengths</div>
+                <div class="resume-feature">Tailored designs for freshers & professionals</div>
+                <div class="resume-feature">Quick turnaround for urgent job applications</div>
+                <div class="resume-feature">Optimized formatting to pass ATS systems</div>
+            </div>
+            
+            <div class="resume-contact">
+                📩 Contact MD_NAVED at +91-8878502349 to get started!
+            </div>
+            
+            <a href="https://wa.me/918878502349" class="resume-btn">Build Your Resume Today!</a>
+        </div>
     </div>
 
     <!-- Location Selection -->
     <div class="location">
-        <h2>Select Your Location:</h2>
+        <h2>📍 Select Your Location:</h2>
         <select id="locationSelect" onchange="updateLocation()">
             <option value="PTSNS College, Shahdol">PTSNS College, Shahdol</option>
             <option value="Tulshi College, Anuppur">Tulshi College, Anuppur</option>
@@ -215,11 +487,16 @@
 
     <!-- Contact Section -->
     <div class="contact">
-        <p> Order Now via watsapp: <a href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh">Contact Us</a></p>
+        <h2>Ready to Order?</h2>
+        <p>Getting started is easy! Just contact us via WhatsApp:</p>
+        <a href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh">Order via WhatsApp</a>
     </div>
 
     <!-- Footer -->
     <div class="footer">
+        <p>📄 Fast, Reliable & Affordable Document Services</p>
+        <p>🏛 Hassle-Free MP Online & Government Services</p>
+        <p>🚚 Doorstep Delivery to College & Home</p>
         <p>&copy; 2025 Dastawez. All rights reserved.</p>
     </div>
 
@@ -233,4 +510,4 @@
     </script>
 
 </body>
-  </html>
+</html>
