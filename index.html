@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dastawez – Instant Printing & MP Online Services</title>
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f8fc;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: #2A6EBB;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: #1E5BA3;
+            padding: 10px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            background: #174E91;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            color: #2A6EBB;
+            font-size: 36px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .btn {
+            background: #2A6EBB;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1E5BA3;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #E6F0FA;
+        }
+
+        .service-card {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Offer Section */
+        .offer {
+            text-align: center;
+            background: #FFD700;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        /* Location Selection */
+        .location {
+            text-align: center;
+            padding: 20px;
+            background: white;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #2A6EBB;
+            border-radius: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 30px;
+            background: white;
+        }
+
+        .contact a {
+            text-decoration: none;
+            background: #2A6EBB;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            background: #1E5BA3;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1E5BA3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Dastawez</h1>
+        <p>Instant Printing & MP Online Services 🚀</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="./service.html">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Fast, Affordable & Hassle-Free!</h1>
+        <p>Print & Deliver: Notes, Resumes, Xerox & More</p>
+        <p>MP Online & Govt. Services: Domicile, PAN, Voter ID, etc.</p>
+        <a href="#" class="btn">Order Now</a>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <div class="service-card">
+            <h2>📄 Print & Deliver</h2>
+            <p>Notes, Resumes, Xerox – Fast & Easy</p>
+        </div>
+        <div class="service-card">
+            <h2>🏛 MP Online Services</h2>
+            <p>Apply for PAN, Voter ID & More</p>
+        </div>
+        <div class="service-card">
+            <h2>🚀 Doorstep Delivery</h2>
+            <p>Get Your Documents Without Hassle</p>
+        </div>
+    </div>
+
+    <!-- Offer Section -->
+    <div class="offer">
+        🎁 First 10 Customers Get ₹10 OFF! Hurry Up!
+    </div>
+
+    <!-- Location Selection -->
+    <div class="location">
+        <h2>Select Your Location:</h2>
+        <select id="locationSelect" onchange="updateLocation()">
+            <option value="PTSNS College, Shahdol">PTSNS College, Shahdol</option>
+            <option value="Tulshi College, Anuppur">Tulshi College, Anuppur</option>
+            <option value="Excellence School, Anuppur">Excellence School, Anuppur</option>
+        </select>
+        <p id="selectedLocation">📍 Currently Serving: PTSNS College, Shahdol</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <p> Order Now via watsapp: <a href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh">Contact Us</a></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Dastawez. All rights reserved.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function updateLocation() {
+            var locationDropdown = document.getElementById("locationSelect");
+            var selectedLocation = locationDropdown.value;
+            document.getElementById("selectedLocation").innerHTML = "📍 Currently Serving: " + selectedLocation;
+        }
+    </script>
+
+</body>
+  </html>
