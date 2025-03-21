@@ -3,513 +3,1068 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dastawez – Instant Printing & MP Online Services</title>
-    
+    <title>Dastawez - Instant Printing & Digital Services</title>
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #2A6EBB;
+            --primary-dark: #1d5694;
+            --primary-light: #4a8ed9;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ffc107;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --white: #ffffff;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background: #f4f8fc;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Header Section */
-        .header {
-            background: #2A6EBB;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        /* Navigation */
-        .nav {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
             display: flex;
-            justify-content: center;
-
-             flex-direction:row;            
-            background: #1E5BA3;
-            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .nav a {
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
             color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 16px;
-            transition: 0.3s;
+            font-size: 24px;
+            font-weight: 700;
         }
 
-        .nav a:hover {
-            background: #174E91;
-            border-radius: 5px;
+        .logo h1 span {
+            color: var(--accent-color);
         }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color:  #f39c12;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color:  #f39c12;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+         
+        }
+       
 
         /* Hero Section */
         .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 80px 0;
             text-align: center;
-            padding: 50px 20px;
-            background: white;
         }
 
-        .hero h1 {
-            color: #2A6EBB;
-            font-size: 36px;
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 18px;
-            margin-top: 10px;
-            color: #555;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
         }
 
-        .value-props {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .value-prop {
-            margin: 10px 20px;
-            font-size: 16px;
-            color: #444;
-        }
-
-        .value-prop span {
-            color: #2A6EBB;
-            font-weight: bold;
-        }
-
-        .btn {
-            background: #2A6EBB;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
+        .cta-btn {
             display: inline-block;
-            margin-top: 25px;
-            border-radius: 5px;
-            transition: 0.3s;
-            font-size: 18px;
-            font-weight: bold;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn:hover {
-            background: #1E5BA3;
-            transform: scale(1.05);
+        .cta-btn:hover {
+            background-color: #e5ac06;
+            transform: translateY(-3px);
         }
 
         /* Services Section */
-        .services-heading {
-            text-align: center;
-            padding-top: 40px;
-            color: #2A6EBB;
-            font-size: 32px;
+        .services {
+            padding: 80px 0;
+            background-color:     #2A6EBB;
         }
 
-        .services {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px 20px 40px;
-            background: #E6F0FA;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color:whitesmoke    ;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 280px;
-            text-align: center;
-            transition: 0.3s;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .service-card h2 {
-            color: #2A6EBB;
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-card .cta-btn {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+        }
+
+        /* Print Order Form */
+        .order-form {
+            padding: 80px 0;
+            background-color:   #E6F0FA ;
+          
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 110, 187, 0.25);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            border: 2px dashed #ced4da;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(42, 110, 187, 0.05);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .file-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+          /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 30px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+       
+      
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                position: relative;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            
+       
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 99;
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
 
         .service-card ul {
             text-align: left;
             padding-left: 20px;
-        }
-
-        .service-card li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        /* Why Choose Us Section */
-        .why-choose {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .why-choose h2 {
-            color: #2A6EBB;
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .benefits {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .benefit {
-            width: 250px;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 8px;
-            background: #E6F0FA;
-            transition: 0.3s;
-        }
-
-        .benefit:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .benefit-icon {
-            font-size: 30px;
             margin-bottom: 10px;
-            color: #2A6EBB;
         }
 
-        /* Offer Section */
-        .offer {
-            text-align: center;
-            background: #FFD700;
-            padding: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #222;
-        }
+       /* Add this to your CSS */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* Resume Hub Section */
-        .resume-hub {
-            background: linear-gradient(135deg, #1E5BA3, #4682B4);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+header {
+    animation: fadeInDown 1s ease-out;
+}
+/* Add this to your CSS */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .resume-hub h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+/* Add this to your CSS */
+.cta-btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .resume-hub-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.cta-btn:hover {
+    animation: pulse 1s infinite;
+}
 
-        .resume-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px 0;
-        }
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Add this to your CSS */
+.hero h2 {
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        .resume-feature {
-            width: 45%;
-            margin: 10px;
-            text-align: left;
-            padding-left: 25px;
-            position: relative;
-        }
+.hero p {
+    animation: fadeIn 2s ease-in-out;
+}
 
-        .resume-feature:before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Add this to your CSS */
+.form-control:focus {
+    border-color: var(--primary-light);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 110, 187, 0.25);
+    animation: inputFocus 0.5s ease;
+}
 
-        .resume-contact {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+@keyframes inputFocus {
+    from {
+        box-shadow: 0 0 0 0 rgba(42, 110, 187, 0.25);
+    }
+    to {
+        box-shadow: 0 0 0 3px rgba(42, 110, 187, 0.25);
+    }
+}
+/* Add this to your CSS */
+.contact-card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-        .resume-btn {
-            background: #FFD700;
-            color: #1E5BA3;
-            padding: 12px 25px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-            font-weight: bold;
-        }
+.contact-card:hover {
+    animation: bounce 0.5s;
+}
 
-        .resume-btn:hover {
-            background: #FFC500;
-            transform: scale(1.05);
-        }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* Add this to your CSS */
+.footer-links a {
+    position: relative;
+    text-decoration: none;
+}
 
-        /* Location Selection */
-        .location {
-            text-align: center;
-            padding: 40px 20px;
-            background: white;
-        }
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
 
-        .location h2 {
-            color: #2A6EBB;
-            margin-bottom: 20px;
-        }
+.footer-links a:hover::after {
+    width: 100%;
+}
+/* Add this to your CSS */
+.file-upload-label {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
 
-        select {
-            padding: 12px;
-            font-size: 16px;
-            border: 2px solid #2A6EBB;
-            border-radius: 5px;
-            width: 300px;
-            max-width: 90%;
-        }
+.file-upload-label.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(42, 110, 187, 0.1);
+    animation: borderPulse 1s infinite;
+}
 
-        #selectedLocation {
-            font-size: 18px;
-            margin-top: 15px;
-            color: #444;
-        }
+@keyframes borderPulse {
+    0% {
+        border-width: 2px;
+    }
+    50% {
+        border-width: 4px;
+    }
+    100% {
+        border-width: 2px;
+    }
+}
+/* Add this to your CSS */
+.file-upload-label {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
 
-        /* Contact Section */
-        .contact {
-            text-align: center;
-            padding: 40px 20px;
-            background: #E6F0FA;
-        }
+.file-upload-label.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(42, 110, 187, 0.1);
+    animation: borderPulse 1s infinite;
+}
 
-        .contact h2 {
-            color: #2A6EBB;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .contact a {
-            text-decoration: none;
-            background: #2A6EBB;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            transition: 0.3s;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .contact a:hover {
-            background: #1E5BA3;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        .footer {
-            background: #1E5BA3;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-            }
-            
-            .nav a {
-                margin: 5px 0;
-            }
-            
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .resume-feature {
-                width: 100%;
-            }
-        }
+@keyframes borderPulse {
+    0% {
+        border-width: 2px;
+    }
+    50% {
+        border-width: 4px;
+    }
+    100% {
+        border-width: 2px;
+    }
+}
+      
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <div class="header">
-        <h1>Dastawez</h1>
-        <p>Instant Printing & MP Online Services 🚀</p>
-    </div>
-
-    <!-- Navigation -->
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
+    <!-- Header Section -->
+    <header  style=" background: linear-gradient(135deg, #3498db, #1a5276);">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://media-hosting.imagekit.io//d4464b49c8b443c5/%F0%9F%93%9D_20250319_163133_0000.jpg?Expires=1837043458&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ota3BjRAH58NTxKrvVKc~M~T9zy4GHQVOCVxNx1bLwzQJBo9xsDtPb89x9675-0DRGnlFY7gN4zm-8WWn2KaB2cajQsYvycv1tlLl~xG3cBqE9XCe2VknsBjqbGtWoJLMVMWaT4B7bObbnc-fXcmvqq8yiknGTSW-~ZIofTMyGVe1rKKgiPx1wPFC9DZAh7K3-wQktrlw1d9~Z4w7Hs75-YDoP26iToxh3bockPnagzxnrk60x5XIIeLJtOtlZy8E5zyoYVhqKCmutfiz5wXd6n9zq7JSr88F9SVeN5qwfAOhV7hq2wwRPxcju7Q-WIOozdhAD8u9xwvrOWkxfczag__" alt="Dastawez Logo">
+                <h1>Dasta<span>wez</span></h1>
+            </div>
+            <button  class="mobile-menu-btn" id="menuBtn">☰</button>
+            <nav  id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Fast, Affordable & Hassle-Free!</h1>
-        <p>Why visit a shop when you can get the same price at your doorstep?</p>
-        
-        <div class="value-props">
-            <div class="value-prop">🔹 <span>Print & Deliver</span> to College or Home</div>
-            <div class="value-prop">🔹 <span>MP Online & Govt Services</span> Without Hassle</div>
-            <div class="value-prop">🔹 <span>Fast, Reliable & Affordable</span> Solutions</div>
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Instant Printing & MP Online Services! 🚀            </h2>
+            <p>MP Online & Government Services delivered to your doorstep without any hassle. Fast, reliable, and affordable solutions for all your printing needs.</p> 
+
+            <a href="#order" class="cta-btn">Order Now</a>
         </div>
-        
-        <a href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh" class="btn">Order Now</a>
-    </div>
+    </section>
 
     <!-- Services Section -->
-    <h2 class="services-heading">📄 Our Services</h2>
-    <div class="services">
-        <div class="service-card">
-            <h2>📄 Document Services</h2>
-            <ul>
-                <li>Assignments & Notes Printing</li>
-                <li>Resume & CV Printing</li>
-                <li>Xerox & Photocopies</li>
-                <li>Lamination & Binding</li>
-                <li>Spiral & Hard Binding</li>
-                <li>PVC ID Cards</li>
-            </ul>
-        </div>
-        <div class="service-card">
-            <h2>🏛 MP Online Services</h2>
-            <ul>
-                <li>Domicile Certificate</li>
-                <li>Income & Caste Certificate</li>
-                <li>Birth Certificate</li>
-                <li>PAN Card Applications</li>
-                <li>Voter ID Applications</li>
-                <li>Other Government Forms</li>
-            </ul>
-        </div>
-        <div class="service-card">
-            <h2>📝 Applications</h2>
-            <ul>
-                <li>Job Applications</li>
-                <li>Railway & SSC Forms</li>
-                <li>MPPSC & Vyapam Forms</li>
-                <li>Scholarship Applications</li>
-                <li>E-KYC Services</li>
-                <li>Other Online Services</li>
-            </ul>
-        </div>
-    </div>
+    <section  class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color:white;">Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//21e372bffa704594/professional-office-copier.jpg?Expires=1837097665&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rArpPjwr6xtDai9CKOnw0wgGzvX1WfL~7DC41oZJKdGUL3tDwJncb4WvjYwGsPqln1T2uU0TmGrkvl2F2wAAS5arj-x96cenaju4kDidQ5ClbT52HZ~n4RNzz76x6ohK2u5xiwVp1iZvzPAAjE3tlngouVn0CzrEsYam0MSqqCmqcqP92CDUGmVB9pyc9AsIorAE8zgxr1-SjKUToYry17oWWJHGmLtBSIyGZBBmldz-x0MzO2u7NVGjBhZ5VZNn6wdQ0TtCSOa~1YDWOtPb07uGxV64Tp0P51xNSYohSdqUwNGVILHs1EI3a7348Mr~3XXbUu0ny91Voo5j0sXU8Q__" alt="Document Printing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Document services</h3>
+                        <ul>
+                            <li>Assignments & Notes Printing</li>
+                            <li>Resume & CV Bulding</li>
+                            <li>Xerox & Photocopies</li>
+                            <li>Lamination & Binding</li>
+                            <li>Spiral & Hard Binding</li>
+                        </ul>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
 
-    <!-- Why Choose Us Section -->
-    <div class="why-choose">
-        <h2>🎯 Why Choose Dastawez?</h2>
-        <div class="benefits">
-            <div class="benefit">
-                <div class="benefit-icon">🚀</div>
-                <h3>Fast Delivery</h3>
-                <p>Same-Day or Next-Day Delivery – No More Waiting!</p>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">💰</div>
-                <h3>Best Prices</h3>
-                <p>Lowest Prices Guaranteed with No Hidden Charges!</p>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">🏠</div>
-                <h3>Doorstep Service</h3>
-                <p>No Need to Visit Cyber Cafés – We Do It for You!</p>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">💳</div>
-                <h3>Easy Payments</h3>
-                <p>Secure UPI & Cash-on-Delivery Available!</p>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//40c5eddda25d448e/mp-online-services.jpg?Expires=1837098602&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=n2fve6NndLBJtR8kOvLLKYQ3LmFpKDV38bTiwRPmiDkWDFlO9u0~Q4v~b2s3zkfKURx6aqIQgkGUnzh1ZgP20c3Ru1l2zk2FhLRHyK4ciknIghPZYMUcwFbO9ssk6vzS2v4ru3sTnGEqx5QRCt1pjeq0Zjw4RfAsbWvn2Xi4z6TjCNS2nR1KIecP9BFO3RI7kbiGJfvkNHdMDeRQdvMRyPWvT7OUBG7kceMMO795Ujl2vIXRmON~6wOE31LGpD4JOSMY27kAdNwDLoYuPwJAO3M1JaiNcaJESshvHyECi73u3Udfj68H80GnVko2JzpcEp~ERUMyLj5lRa0T~Bz5cA__" alt="Business Cards">
+                    </div>
+                    <div class="service-content">
+                        <h3>MP online services</h3>
+                        <ul>
+                            <li>Domicile Certificate</li>
+                            <li>Income & Caste Certificate</li>
+                            <li>Birth Certificate</li>
+                            <li>PAN Card Applications</li>
+                            <li>Voter ID Applications</li>
+                            <li>Other Government Forms</li>
+                        </ul>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//a08bd98c6a974a8e/application-form-for-accepting-new-employees-hiring-employees-by-reading-cv-and-resume-choose-worker-on-job-resume-agency-interview-illustration-for-business-card-banner-brochure-flyer-free-vector.jpg?Expires=1837184734&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dPjtBMcwD2I~c~CBx35gZWYXbMz2yM2amLOXknfOznr~kolufznyko6urLzaKs6xIlochNsGZG1oXj07RglPs0CjGVboM9HpBC~jkWjr0ti1D7K5Ajh7y6KTMUDjxA~-aNlckBYc2NSMDsIy8hDZsA5VtSCmcVwhf6D8aLzUd0CPrZw9zApPerFgpaagngZZ7UWihMGtltSj8EW~N-zpG~tReD5FvQglrD6EY-AuihYDWxlkx9pSsOtPY7CqLRAPs6YVQZ1GcCns5RMeUZmCM9rKaJu~8Z70IeOT0f2y0SAFK7zdfkXoi2JWHBq9AfM~SUA395KzDTYSiIgDRrTV9w__" alt="Business Cards">
+                    </div>
+                    <div class="service-content">
+                        <h3>Aplications & form's</h3>
+                        <ul>
+                            <li>Job Applications</li>
+                            <li>Railway & SSC Forms</li>
+                            <li>MPPSC & Vyapam Forms</li>
+                            <li>Scholarship Applications</li>
+                            <li>E-KYC Services</li>
+                            <li>Other Online Services</li>
+                        </ul>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//e341004fb15548e3/Picsart_25-03-21_22-41-33-345.jpg?Expires=1837185103&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=d7vYSJjJDoTFG7wqAS3D9~P8YD9tUqOcrXhTCXpT2I8hu9qHKvJV2UknOgSeYJakDpjOvhW16znh0IwI2MsjxFkyGWxpEoHB9rfQQPCbX095BFf0axBw-l8iYa22fZyBhVJxzTx0g~sKktViyBb1IRlSDLgT-WTDKnsyDt9F7SfOqTnFdK3GA4GcHN1xkFafMnrpjMgrXy7XvcklIfK8EUej29yZPZ48~BAZ7q9Hi5aK8suyv24vQ3xhd2W6QfZXVX8sMfTdg9N03p0cG~ArbxIAY3Cm7IDKLPRhY7X0cbYI2Dm~G6fP-W11MiNAHUt44nEeRePNv5r9dpjagabGEQ__" alt="Business Cards">
+                    </div>
+                    <div class="service-content">
+                        <h3>Exam forms</h3>
+                        <ul>
+                            <li>CUET Exam Form Filling</li>
+                            <li>JEE Exam Form Filling</li>
+                            <li>NEET Exam Form Filling</li>
+                            <li>CA Exam Form Filling</li>
+                            <li>Other Exam Form Filling</li>
+                        </ul>
+                        
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//68ea30571dae41bd/EN-paso-3-PPT.gif?Expires=1837186075&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=T0GZJowVk2sym~nDtYvs28~K9h41d9FB23g6hBXhLfuG32zfi50-ZRovCHAEzTdjGCOctmfMyO5kyasJYQscbZ8iH3~Kz277Z0Y4b3Ai~TkKDuBvc48-0LDbewvvQy~uKD1OS3UnkRqH-r5GG9lhZFfjkxJ~mYnxYG1VKyAy3sMbDpcbIQpAiW5VaRkh~NTzcMuMEYtWySR2j5Z4-F7rlENfyzpd4epsBOHCyAcjXewyZ-qs2MqBw-ptYGmmU3nTDdoeuP8jG8SKv7jK5zGSeX3F8POQh7SEw3XfZnQmDTmnvtT88qPZdWi-JXG4QI8SF1bhRw6fdQT8-xsneNkxkA__" alt="Business Cards">
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Services</h3>
+                        <ul>
+    <li>Poster Design</li>
+    <li>PowerPoint Presentations (PPT)</li>
+    <li>Word Document Creation</li>
+    <li>Excel Sheet Formatting</li>
+    <li>Invitation Card Design</li>
+    <li>Resume & Cover Letter Writing</li>
+    <li>PDF Editing & Formatting</li>
+    <li>Business Card Design</li>
+    <li>Certificate Design</li>
+</ul>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//60999b2088954d34/Business-card.jpg?Expires=1837185761&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LZ9wY8g5R2HhuFvSXs9T9eS5noX8g76dc5YNgQFVlfzbISGKSWRC56NqenvwLpMG87Sf5GmRz-6euHGHaZ8jk67H1AOoEVzDnZI-2qQ3ZRsS2f91cWqMH66ED4txzRfTeHPGLh~u7N6iCD3XNXWsT49kGNTkCK3pCh7L~ltgeCWvDqMw9vEygH3rqXq6EBIokbrZLpJf9sLOhZG5WIn6AyQVd5m6a7btCBYsFq~Ls~ltYmkqAobiIjQf5309om3~RvCbYnlqCK8aUOIDCO7mZ8m1aV-Z2xFsXYAA13786hNNW7EmYTxCJZ7jHpC6fWnrHpG4rbwRD0fZBsMIv-T5UQ__" alt="Digital Services">
+                    </div>
+                    <div class="service-content">
+                        <h3>business cards</h3>
+                      <ul>
+    <li>Custom Business Card Design</li>
+    <li>Modern & Professional Designs</li>
+    <li>Logo & Branding Integration</li>
+    <li>Print-Ready Files (PDF, PNG, JPG)</li>
+    <li>QR Code Integration</li>
+    <li>Digital Business Cards (E-Card)</li>
+</ul>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//2990591cbea346dd/fast-delivery-logo-with-bold-yellow-text-effect-isolated-black-background-quick-shipment_375539-1454.jpg?Expires=1837098763&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eWu4dfgttr1kmyfD8gnmvWK93z4a0wwrqQHDXVDU9Qu5J5DvwpbvJRs4cNKYD5APfOBdbhylJB33bLzANab28zUS~9w0jEph10I3l9a6VNRNJasZQNjGPE9uzfS2MnG2RS0tE8kIEjJV4zV1LQgb1tb5RXljwouXmf1-OmpTMkqQT-yWG6hMF7MdAefsSOZedoPtA5D9F~lTBIpPB7kNw5251fG~uPDik2YubSck4YjzFM95xZJJWhFhko7qXeAY-tdnt9XIgWpp5JrjC0F7czl3~DH1hWrxuLSjjD9UlAu16HXYTDfrL4Sg~8OK8dFtGeRl5zo1Y4HLEDvuP4efMA__" alt="Rush Delivery">
+                    </div>
+                    <div class="service-content">
+                        <h3>Express Delivery</h3>
+                        <p>Same-Day & Express Delivery – Need urgent printing? Get your documents printed and delivered on the same day with our fast and hassle-free service. Perfect for last-minute assignments, official documents, and urgent needs!
+
+</p>
+                        <a href="#order" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Offer Section -->
-    <div class="offer">
-        🎁 Limited Offer: First 10 Customers Get ₹10 OFF! Hurry Up!
-    </div>
-
-    <!-- Resume Hub Section -->
-    <div class="resume-hub">
-        <div class="resume-hub-content">
-            <h2>🚀 RESUME HUB - Craft Your Future! 🔥</h2>
-            <p>Need a professional resume? We've got you covered with affordable excellence!</p>
-            
-            <div class="resume-features">
-                <div class="resume-feature">Get a professional resume for just ₹49!</div>
-                <div class="resume-feature">Stand out to recruiters who scan resumes in 6 seconds</div>
-                <div class="resume-feature">Expert guidance highlighting your strengths</div>
-                <div class="resume-feature">Tailored designs for freshers & professionals</div>
-                <div class="resume-feature">Quick turnaround for urgent job applications</div>
-                <div class="resume-feature">Optimized formatting to pass ATS systems</div>
+    <!-- Order Form Section -->
+    <section  class="order-form" id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color:black;">Place Your Order</h2>
             </div>
-            
-            <div class="resume-contact">
-                📩 Contact MD_NAVED at +91-8878502349 to get started!
+            <div class="form-container">
+                <form id="printOrderForm">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="serviceType">Service Type</label>
+                                <select id="serviceType" class="form-control" required>
+                                    <option value="">Select Service</option>
+                                    <option value="document">Document Printing</option>
+                                    <option value="photo">Photo Printing</option>
+                                    <option value="banner">Banner Printing</option>
+                                    <option value="business-card">Business Cards</option>
+                                    <option value="digital">Digital Services</option>
+                                    <option value="other">Other (Please Specify)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="otherServiceGroup" style="display: none;">
+                        <label for="otherService">Please Specify</label>
+                        <input type="text" id="otherService" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" class="form-control" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="deliveryOption">Delivery Option</label>
+                                <select id="deliveryOption" class="form-control" required>
+                                    <option value="">Select Delivery Option</option>
+                                    <option value="standard">Standard (3-5 days)</option>
+                                    <option value="express">Express (1-2 days)</option>
+                                    <option value="same-day">Same Day (Order before 10 AM)</option>
+                                    <option value="pickup">Self Pickup</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload">Upload Your File</label>
+                        <div class="file-upload">
+                            <label for="fileUpload" class="file-upload-label">
+                                <div id="dropAreaText">
+                                    <span>Drag & Drop files here or click to browse</span>
+                                </div>
+                            </label>
+                            <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
+                        </div>
+                        <div class="file-info" id="fileInfo">No file chosen</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="instructions">Special Instructions</label>
+                        <textarea id="instructions" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="cta-btn" style="width: 100%;">Submit Order</button>
+                    </div>
+                </form>
             </div>
-            
-            <a href="https://wa.me/918878502349" class="resume-btn">Build Your Resume Today!</a>
         </div>
-    </div>
-
-    <!-- Location Selection -->
-    <div class="location">
-        <h2>📍 Select Your Location:</h2>
-        <select id="locationSelect" onchange="updateLocation()">
-            <option value="PTSNS College, Shahdol">PTSNS College, Shahdol</option>
-            <option value="Tulshi College, Anuppur">Tulshi College, Anuppur</option>
-            <option value="Excellence School, Anuppur">Excellence School, Anuppur</option>
-        </select>
-        <p id="selectedLocation">📍 Currently Serving: PTSNS College, Shahdol</p>
-    </div>
+    </section>
 
     <!-- Contact Section -->
-    <div class="contact">
-        <h2>Ready to Order?</h2>
-        <p>Getting started is easy! Just contact us via WhatsApp:</p>
-        <a href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh">Order via WhatsApp</a>
-    </div>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-info">
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>📄 Fast, Reliable & Affordable Document Services</p>
-        <p>🏛 Hassle-Free MP Online & Government Services</p>
-        <p>🚚 Doorstep Delivery to College & Home</p>
-        <p>&copy; 2025 Dastawez. All rights reserved.</p>
-    </div>
+                <div  class="contact-card"><a style="text-decoration: none; color: white;" href="https://linktr.ee/dastawez">
+                    <i>🌲</i>
+                        <h3>Join our linktree</h3>
+                        <p>click here</p>
+                    </a>
+                    </div>
+                <div class="contact-card">
+                    <a style="text-decoration: none; color: white;" href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh">
+                    <i><a href="https://wa.me/919876543210" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
+</a></i>
+                    <h3>Join Watsapp groupe</h3>
+                    <p>Click here</p>
+                </a>
+                </div>
+                <div class="contact-card">
+                    <i>📞</i>
+                    <h3>Call Us</h3>
+                    <p><a style="text-decoration: none; color: white;" href="tel:+918878502349">+91-8878502349</a></p>
+                    <p><a style="text-decoration: none; color: white;" href="tel:+919301856091">+91-9301856091</a></p>
+                    
+                    <p>Mon-Sat: 9AM - 7PM</p>
+                </div>
+                <div  class="contact-card">
+                   <i>📬</i>
+                    <h3>Email Us</h3>
+                 <p> <a style="text-decoration: none; color:white;" href="mailto:dastawez.in@gmail.com">dastawez.in@gmail.com
+                </a></p>
+                </div>
+            </div>
+           
+        </div>
+    </section>
 
-    <!-- JavaScript -->
-    <script>
-        function updateLocation() {
-            var locationDropdown = document.getElementById("locationSelect");
-            var selectedLocation = locationDropdown.value;
-            document.getElementById("selectedLocation").innerHTML = "📍 Currently Serving: " + selectedLocation;
+   
+   <!-- Footer -->
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Dastawez</h3>
+                <p>Revolutionizing document services by bringing printing and MP Online government services directly to your doorstep.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#resume-hub">Resume Hub</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#printing-service">Printing Services</a></li>
+                    <li><a href="#mp-online">MP Online</a></li>
+                    <li><a href="#delivery">Doorstep Delivery</a></li>
+                    <li><a href="#resume-hub">Resume Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>We Serve</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Students</a></li>
+                    <li><a href="#">Job Seekers</a></li>
+                    <li><a href="#">Businesses & Freelancers</a></li>
+                    <li><a href="#">General Public</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Dastawez. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('menuBtn').addEventListener('click', function() {
+        document.getElementById('mainNav').classList.toggle('active');
+    });
+
+    // Service type selection
+    document.getElementById('serviceType').addEventListener('change', function() {
+        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        if (this.value === 'other') {
+            otherServiceGroup.style.display = 'block';
+        } else {
+            otherServiceGroup.style.display = 'none';
         }
-    </script>
+    });
 
+    // File upload
+    const fileUpload = document.getElementById('fileUpload');
+    const fileInfo = document.getElementById('fileInfo');
+    const dropAreaText = document.getElementById('dropAreaText');
+
+    fileUpload.addEventListener('change', function() {
+        if (this.files.length > 0) {
+            if (this.files.length === 1) {
+                fileInfo.textContent = `Selected file: ${this.files[0].name}`;
+            } else {
+                fileInfo.textContent = `Selected ${this.files.length} files`;
+            }
+        } else {
+            fileInfo.textContent = 'No file chosen';
+        }});
+    // Form submission
+    document.getElementById('printOrderForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your order! We will contact you shortly to confirm the details.');
+        this.reset();
+        fileInfo.textContent = 'No file chosen';
+    });
+    // Newsletter form
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for subscribing to our newsletter!');
+        this.reset();
+    });
+    // Add this to your JavaScript
+const fileUploadLabel = document.querySelector('.file-upload-label');
+
+fileUploadLabel.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    fileUploadLabel.classList.add('dragover');
+});
+
+fileUploadLabel.addEventListener('dragleave', () => {
+    fileUploadLabel.classList.remove('dragover');
+});
+
+fileUploadLabel.addEventListener('drop', () => {
+    fileUploadLabel.classList.remove('dragover');
+});
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</script>
 </body>
-</html>
+    </html>
