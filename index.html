@@ -386,7 +386,22 @@
             .mobile-menu-btn {
                 display: block;
             }
+.contact-card {
+    word-wrap: break-word; /* Ensures long words break and wrap */
+    overflow-wrap: break-word; /* Handles overflow by breaking words */
+    white-space: normal; /* Ensures text wraps normally */
+    padding: 15px; /* Add some padding to prevent text from touching the edges */
+}
 
+.contact-card p {
+    margin: 0; /* Remove default margin for paragraphs */
+    word-break: break-all; /* Break long words if necessary */
+}
+
+.contact-card a {
+    display: inline-block; /* Ensure links behave like blocks for better wrapping */
+    max-width: 100%; /* Prevent links from overflowing */
+}
             
        
             nav {
