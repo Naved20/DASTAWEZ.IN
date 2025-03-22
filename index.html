@@ -341,7 +341,7 @@
 
         .contact-card {
             flex: 1;
-            min-width: 150px;
+            min-width: 120px;
             text-align: center;
             padding: 30px;
             margin: 10px;
@@ -365,6 +365,8 @@
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
+        
+        
         /* Media Queries */
         @media (max-width: 992px) {
             .hero h2 {
@@ -791,7 +793,7 @@ header {
                         <img src="https://media-hosting.imagekit.io//60999b2088954d34/Business-card.jpg?Expires=1837185761&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LZ9wY8g5R2HhuFvSXs9T9eS5noX8g76dc5YNgQFVlfzbISGKSWRC56NqenvwLpMG87Sf5GmRz-6euHGHaZ8jk67H1AOoEVzDnZI-2qQ3ZRsS2f91cWqMH66ED4txzRfTeHPGLh~u7N6iCD3XNXWsT49kGNTkCK3pCh7L~ltgeCWvDqMw9vEygH3rqXq6EBIokbrZLpJf9sLOhZG5WIn6AyQVd5m6a7btCBYsFq~Ls~ltYmkqAobiIjQf5309om3~RvCbYnlqCK8aUOIDCO7mZ8m1aV-Z2xFsXYAA13786hNNW7EmYTxCJZ7jHpC6fWnrHpG4rbwRD0fZBsMIv-T5UQ__" alt="Digital Services">
                     </div>
                     <div class="service-content">
-                        <h3>business cards</h3>
+                        <h3>Business Cards</h3>
                       <ul>
     <li>Custom Business Card Design</li>
     <li>Modern & Professional Designs</li>
@@ -803,18 +805,7 @@ header {
                         <a href="#order" class="cta-btn">Order Now</a>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://media-hosting.imagekit.io//2990591cbea346dd/fast-delivery-logo-with-bold-yellow-text-effect-isolated-black-background-quick-shipment_375539-1454.jpg?Expires=1837098763&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eWu4dfgttr1kmyfD8gnmvWK93z4a0wwrqQHDXVDU9Qu5J5DvwpbvJRs4cNKYD5APfOBdbhylJB33bLzANab28zUS~9w0jEph10I3l9a6VNRNJasZQNjGPE9uzfS2MnG2RS0tE8kIEjJV4zV1LQgb1tb5RXljwouXmf1-OmpTMkqQT-yWG6hMF7MdAefsSOZedoPtA5D9F~lTBIpPB7kNw5251fG~uPDik2YubSck4YjzFM95xZJJWhFhko7qXeAY-tdnt9XIgWpp5JrjC0F7czl3~DH1hWrxuLSjjD9UlAu16HXYTDfrL4Sg~8OK8dFtGeRl5zo1Y4HLEDvuP4efMA__" alt="Rush Delivery">
-                    </div>
-                    <div class="service-content">
-                        <h3>Express Delivery</h3>
-                        <p>Same-Day & Express Delivery – Need urgent printing? Get your documents printed and delivered on the same day with our fast and hassle-free service. Perfect for last-minute assignments, official documents, and urgent needs!
 
-</p>
-                        <a href="#order" class="cta-btn">Order Now</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -946,7 +937,7 @@ header {
                 <div  class="contact-card"><a style="text-decoration: none; color:white; ; " href="mailto:dastawez.in@gmail.com">
                    <i>📬</i>
                     <h3>Email Us</h3>
-                 <p>dastawez.in@gmail.com
+                 <p class="email">dastawez.in@gmail.com
                 </p></a>
                 </div>
             </div>
@@ -996,72 +987,93 @@ header {
         </div>
     </div>
 </footer>
-
-<script>
+<script>document.addEventListener("DOMContentLoaded", function () {
     // Mobile menu toggle
-    document.getElementById('menuBtn').addEventListener('click', function() {
-        document.getElementById('mainNav').classList.toggle('active');
-    });
+    const menuBtn = document.getElementById("menuBtn");
+    const mainNav = document.getElementById("mainNav");
+
+    if (menuBtn && mainNav) {
+        menuBtn.addEventListener("click", function () {
+            mainNav.classList.toggle("active");
+        });
+    }
 
     // Service type selection
-    document.getElementById('serviceType').addEventListener('change', function() {
-        const otherServiceGroup = document.getElementById('otherServiceGroup');
-        if (this.value === 'other') {
-            otherServiceGroup.style.display = 'block';
-        } else {
-            otherServiceGroup.style.display = 'none';
-        }
-    });
+    const serviceType = document.getElementById("serviceType");
+    const otherServiceGroup = document.getElementById("otherServiceGroup");
+
+    if (serviceType && otherServiceGroup) {
+        serviceType.addEventListener("change", function () {
+            otherServiceGroup.style.display = this.value === "other" ? "block" : "none";
+        });
+    }
 
     // File upload
-    const fileUpload = document.getElementById('fileUpload');
-    const fileInfo = document.getElementById('fileInfo');
-    const dropAreaText = document.getElementById('dropAreaText');
+    const fileUpload = document.getElementById("fileUpload");
+    const fileInfo = document.getElementById("fileInfo");
+    const dropArea = document.querySelector(".file-upload-label");
 
-    fileUpload.addEventListener('change', function() {
-        if (this.files.length > 0) {
-            if (this.files.length === 1) {
-                fileInfo.textContent = `Selected file: ${this.files[0].name}`;
+    if (fileUpload && fileInfo && dropArea) {
+        fileUpload.addEventListener("change", function () {
+            if (this.files.length > 0) {
+                fileInfo.textContent =
+                    this.files.length === 1
+                        ? `Selected file: ${this.files[0].name}`
+                        : `Selected ${this.files.length} files`;
             } else {
-                fileInfo.textContent = `Selected ${this.files.length} files`;
+                fileInfo.textContent = "No file chosen";
             }
-        } else {
-            fileInfo.textContent = 'No file chosen';
-        }});
-    // Form submission
-    document.getElementById('printOrderForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your order! We will contact you shortly to confirm the details.');
-        this.reset();
-        fileInfo.textContent = 'No file chosen';
-    });
-    // Newsletter form
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for subscribing to our newsletter!');
-        this.reset();
-    });
-    // Add this to your JavaScript
-const fileUploadLabel = document.querySelector('.file-upload-label');
+        });
 
-fileUploadLabel.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    fileUploadLabel.classList.add('dragover');
-});
+        // Drag-and-drop functionality
+        dropArea.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropArea.classList.add("dragover");
+        });
 
-fileUploadLabel.addEventListener('dragleave', () => {
-    fileUploadLabel.classList.remove('dragover');
-});
+        dropArea.addEventListener("dragleave", () => {
+            dropArea.classList.remove("dragover");
+        });
 
-fileUploadLabel.addEventListener('drop', () => {
-    fileUploadLabel.classList.remove('dragover');
-});
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
+        dropArea.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropArea.classList.remove("dragover");
+
+            if (e.dataTransfer.files.length > 0) {
+                fileUpload.files = e.dataTransfer.files;
+                fileUpload.dispatchEvent(new Event("change")); // Trigger change event
+            }
+        });
     }
-}
-</script>
+
+    // Form submission handling
+    const printOrderForm = document.getElementById("printOrderForm");
+    if (printOrderForm) {
+        printOrderForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thank you for your order! We will contact you shortly to confirm the details.");
+            this.reset();
+            if (fileInfo) fileInfo.textContent = "No file chosen";
+        });
+    }
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById("newsletterForm");
+    if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thank you for subscribing to our newsletter!");
+            this.reset();
+        });
+    }
+
+    // Accessibility: Disable animations for users who prefer reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.style.setProperty("animation", "none");
+        document.documentElement.style.setProperty("transition", "none");
+    }
+});</script>
+
 </body>
-    </html>
+                            </html>
+    
