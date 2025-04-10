@@ -82,7 +82,7 @@
         }
 
         nav ul li a {
-            color: white;
+            color: rgb(0, 0, 0);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -90,10 +90,7 @@
             padding: 5px 0;
         }
 
-        nav ul li a:hover {
-            color: ;
-        }
-
+      
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -348,6 +345,8 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            overflow: hidden; /* Ensures no overflow */
+            word-wrap: break-word; /* Breaks long words inside the card */
         }
 
         .contact-card:hover {
@@ -689,7 +688,7 @@ header {
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header">Order Now</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="./About.html">About</a></li>
                 </ul>
@@ -703,7 +702,7 @@ header {
             <h2>Instant Printing & MP Online Services! 🚀            </h2>
             <p>MP Online & Government Services delivered to your doorstep without any hassle. Fast, reliable, and affordable solutions for all your printing needs.</p> 
 
-            <a href="#order" class="cta-btn">Order Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
         </div>
     </section>
 
@@ -714,26 +713,10 @@ header {
                 <h2 style="color:black;">Our Services</h2>
             </div>
             <div class="services-grid">
+                
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://media-hosting.imagekit.io//21e372bffa704594/professional-office-copier.jpg?Expires=1837097665&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rArpPjwr6xtDai9CKOnw0wgGzvX1WfL~7DC41oZJKdGUL3tDwJncb4WvjYwGsPqln1T2uU0TmGrkvl2F2wAAS5arj-x96cenaju4kDidQ5ClbT52HZ~n4RNzz76x6ohK2u5xiwVp1iZvzPAAjE3tlngouVn0CzrEsYam0MSqqCmqcqP92CDUGmVB9pyc9AsIorAE8zgxr1-SjKUToYry17oWWJHGmLtBSIyGZBBmldz-x0MzO2u7NVGjBhZ5VZNn6wdQ0TtCSOa~1YDWOtPb07uGxV64Tp0P51xNSYohSdqUwNGVILHs1EI3a7348Mr~3XXbUu0ny91Voo5j0sXU8Q__" alt="Document Printing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Document Services</h3>
-                        <ul>
-                            <li>Assignments & Notes Printing</li>
-                            <li>Resume & CV Building</li>
-                            <li>Xerox & Photocopies</li>
-                            <li>Lamination & Binding</li>
-                            <li>Spiral & Hard Binding</li>
-                        </ul>
-                        <a href="#order" class="cta-btn">Order Now</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://media-hosting.imagekit.io//39a654b6fa654fa6/Picsart_25-03-22_00-22-43-626.jpg?Expires=1837191200&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=OXI5jSXVXKSr34enbQLZAQZWMBh2mP-o4GB6bV3O2~DU-ASMtWuvlBpV1S0bHFA3qmxY5TDJH6t16hL7TDOhrzicTgFcf2r~YYozt5EYDU8OdEeEccyBLOUd-RjIEXwNkFr-9frzIDMdhCf4TfX9uluCVkQEDDAlBjfcJFyT-9IuhLAaNEihqvhGdKW7zUCFjGqWEQF~2KCNfVW-aDTBBXCcieeRaM3NmSsEpCfzL-n2N1K9qUgMon2vt4c5pOmLUHklM4cUMmhG-Yv3FodE8WsLxVHuPS5XgAqFTZmbb5-aUq6aSUayNWVnm2mwZ5MXWlSLkGwhY9hGzEoVC93p3w__" alt="Business Cards">
+                        <img src="https://media-hosting.imagekit.io/8733ece576274287/IMG-20250410-WA0026.jpg?Expires=1838882291&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=oQffLZq-pCI-Ed9NVSdu8JhmphAtO-5qvPzu2Y4I9Ootor0KccROTjrVZwxzgQWmGUyTY9QCOjdLGbi7Kif1nPfN5hr6fq0L6Eycg2hG~bfXVUMEkZDjqaN8Mo4jK6OWWYyL2bfYh-jZm7ajQmS6Wac13aWpnVs9Z~I9djGcdPkfmuEBPvp9aFtX65aUxDSzL5AGCavn8F35Ssec8RLlDtR41Cm~iy6QNAeXHXh3vcQ-lUiUAKuLNxs1JSei1NxGngHL0ZxLHEdBdT6as9mbVbaYlbzzD4ZmOd8uULOb8CbPvImnbA8Ooh989adSV38Rf3394mweU2t-SxCQkjFOZA__" alt="Business Cards">
                     </div>
                     <div class="service-content">
                         <h3>MP Online Services</h3>
@@ -745,27 +728,26 @@ header {
                             <li>Voter ID Applications</li>
                             <li>Other Government Forms</li>
                         </ul>
-                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
-
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://media-hosting.imagekit.io//a08bd98c6a974a8e/application-form-for-accepting-new-employees-hiring-employees-by-reading-cv-and-resume-choose-worker-on-job-resume-agency-interview-illustration-for-business-card-banner-brochure-flyer-free-vector.jpg?Expires=1837184734&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dPjtBMcwD2I~c~CBx35gZWYXbMz2yM2amLOXknfOznr~kolufznyko6urLzaKs6xIlochNsGZG1oXj07RglPs0CjGVboM9HpBC~jkWjr0ti1D7K5Ajh7y6KTMUDjxA~-aNlckBYc2NSMDsIy8hDZsA5VtSCmcVwhf6D8aLzUd0CPrZw9zApPerFgpaagngZZ7UWihMGtltSj8EW~N-zpG~tReD5FvQglrD6EY-AuihYDWxlkx9pSsOtPY7CqLRAPs6YVQZ1GcCns5RMeUZmCM9rKaJu~8Z70IeOT0f2y0SAFK7zdfkXoi2JWHBq9AfM~SUA395KzDTYSiIgDRrTV9w__" alt="Business Cards">
+                        <img src="https://media-hosting.imagekit.io/b5b3864ecbed474a/Picsart_25-04-10_14-29-30-112.jpg?Expires=1838884069&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=VK0xXFG~HGxvmxfTHMpg6nGkSiuLL64C1mo6o8fJtrqIViDzQcuG-Snv4Y3zMx60amluz1todUHucSgxuDCS~oEJVd6YpAYysV9dL3IipNiGL-CT87ewQS5A4M~2X8JPKPPemBlW~gHuClfPmV4wg~fPSgcu1bU8XaQ766BrdI303m0RrIxm~rJ55VMr-Si8Wiir~BuZXeDSrb-UVciLUdoVeeLFKjqyqZgYdNPU~qkw0-xtNhokwD6ukHqqq-dchGn52pjR5jPt3l7HKgOGkTM6LKqmmzhWsebsKkY8Ah3itDiVzHGxaXmyRDqcB8qhjoPI~AD2xylEOfYJHT7c5Q__" alt="Business Cards">
                     </div>
                     <div class="service-content">
-                        <h3>Aplications & forms</h3>
+                        <h3>College & University Forms</h3>
                         <ul>
-                            <li>Job Applications</li>
-                            <li>Railway & SSC Forms</li>
-                            <li>MPPSC & Vyapam Forms</li>
-                            <li>Scholarship Applications</li>
-                            <li>E-KYC Services</li>
-                            <li>Other Online Services</li>
-                        </ul>
-                        <a href="#order" class="cta-btn">Order Now</a>
+                            <li>Counselling Forms</li>
+                            <li>Enrollment Form</li>
+                            <li>Scholarship Form</li>
+                            <li>Exam Form</li>
+                            <li>Etc.</li>
+                        </ul>                        
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
                     </div>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://media-hosting.imagekit.io//e341004fb15548e3/Picsart_25-03-21_22-41-33-345.jpg?Expires=1837185103&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=d7vYSJjJDoTFG7wqAS3D9~P8YD9tUqOcrXhTCXpT2I8hu9qHKvJV2UknOgSeYJakDpjOvhW16znh0IwI2MsjxFkyGWxpEoHB9rfQQPCbX095BFf0axBw-l8iYa22fZyBhVJxzTx0g~sKktViyBb1IRlSDLgT-WTDKnsyDt9F7SfOqTnFdK3GA4GcHN1xkFafMnrpjMgrXy7XvcklIfK8EUej29yZPZ48~BAZ7q9Hi5aK8suyv24vQ3xhd2W6QfZXVX8sMfTdg9N03p0cG~ArbxIAY3Cm7IDKLPRhY7X0cbYI2Dm~G6fP-W11MiNAHUt44nEeRePNv5r9dpjagabGEQ__" alt="Business Cards">
@@ -780,7 +762,43 @@ header {
                             <li>Other Exam Form</li>
                         </ul>
                         
-                        <a href="#order" class="cta-btn">Order Now</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//a08bd98c6a974a8e/application-form-for-accepting-new-employees-hiring-employees-by-reading-cv-and-resume-choose-worker-on-job-resume-agency-interview-illustration-for-business-card-banner-brochure-flyer-free-vector.jpg?Expires=1837184734&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dPjtBMcwD2I~c~CBx35gZWYXbMz2yM2amLOXknfOznr~kolufznyko6urLzaKs6xIlochNsGZG1oXj07RglPs0CjGVboM9HpBC~jkWjr0ti1D7K5Ajh7y6KTMUDjxA~-aNlckBYc2NSMDsIy8hDZsA5VtSCmcVwhf6D8aLzUd0CPrZw9zApPerFgpaagngZZ7UWihMGtltSj8EW~N-zpG~tReD5FvQglrD6EY-AuihYDWxlkx9pSsOtPY7CqLRAPs6YVQZ1GcCns5RMeUZmCM9rKaJu~8Z70IeOT0f2y0SAFK7zdfkXoi2JWHBq9AfM~SUA395KzDTYSiIgDRrTV9w__" alt="Business Cards">
+                    </div>
+                    <div class="service-content">
+                        <h3>Aplications & forms</h3>
+                        <ul>
+                            <li>Job Applications</li>
+                            <li>Railway & SSC Forms</li>
+                            <li>MPPSC & Vyapam Forms</li>
+                            <li>Scholarship Applications</li>
+                            <li>E-KYC Services</li>
+                            <li>Other Online Services</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://media-hosting.imagekit.io//21e372bffa704594/professional-office-copier.jpg?Expires=1837097665&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rArpPjwr6xtDai9CKOnw0wgGzvX1WfL~7DC41oZJKdGUL3tDwJncb4WvjYwGsPqln1T2uU0TmGrkvl2F2wAAS5arj-x96cenaju4kDidQ5ClbT52HZ~n4RNzz76x6ohK2u5xiwVp1iZvzPAAjE3tlngouVn0CzrEsYam0MSqqCmqcqP92CDUGmVB9pyc9AsIorAE8zgxr1-SjKUToYry17oWWJHGmLtBSIyGZBBmldz-x0MzO2u7NVGjBhZ5VZNn6wdQ0TtCSOa~1YDWOtPb07uGxV64Tp0P51xNSYohSdqUwNGVILHs1EI3a7348Mr~3XXbUu0ny91Voo5j0sXU8Q__" alt="Document Printing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Document Services</h3>
+                        <ul>
+                            <li>Assignments & Notes Printing</li>
+                            <li>Resume & CV Building</li>
+                            <li>Xerox & Photocopies</li>
+                            <li>Lamination & Binding</li>
+                            <li>Spiral & Hard Binding</li>
+                        </ul>
+                      
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -790,17 +808,17 @@ header {
                     <div class="service-content">
                         <h3>Digital Services</h3>
                         <ul>
-    <li>Poster Design</li>
-    <li>PowerPoint Presentations (PPT)</li>
-    <li>Word Document Creation</li>
-    <li>Excel Sheet Formatting</li>
-    <li>Invitation Card Design</li>
-    <li>Resume & Cover Letter Writing</li>
-    <li>PDF Editing & Formatting</li>
-    <li>Business Card Design</li>
-    <li>Certificate Design</li>
-</ul>
-                        <a href="#order" class="cta-btn">Order Now</a>
+                              <li>Poster Design</li>
+                              <li>PowerPoint Presentations (PPT)</li>
+                              <li>Word Document Creation</li>
+                              <li>Excel Sheet Formatting</li>
+                              <li>Invitation Card Design</li>
+                              <li>Resume & Cover Letter Writing</li>
+                              <li>PDF Editing & Formatting</li>
+                              <li>Business Card Design</li>
+                              <li>Certificate Design</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -810,28 +828,17 @@ header {
                     <div class="service-content">
                         <h3>Business Cards</h3>
                       <ul>
-    <li>Custom Business Card Design</li>
-    <li>Modern & Professional Designs</li>
-    <li>Logo & Branding Integration</li>
-    <li>Print-Ready Files (PDF, PNG, JPG)</li>
-    <li>QR Code Integration</li>
-    <li>Digital Business Cards (E-Card)</li>
-</ul>
-                        <a href="#order" class="cta-btn">Order Now</a>
+                        <li>Custom Business Card Design</li>
+                        <li>Modern & Professional Designs</li>
+                        <li>Logo & Branding Integration</li>
+                        <li>Print-Ready Files (PDF, PNG, JPG)</li>
+                        <li>QR Code Integration</li>
+                        <li>Digital Business Cards (E-Card)</li>
+                    </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqTnXUQh6tOCfrR3vQcl5q4clYNIFrwgXtEM6k7paOP2pwIw/viewform?usp=header" class="cta-btn">Order Now</a>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://media-hosting.imagekit.io//2990591cbea346dd/fast-delivery-logo-with-bold-yellow-text-effect-isolated-black-background-quick-shipment_375539-1454.jpg?Expires=1837098763&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eWu4dfgttr1kmyfD8gnmvWK93z4a0wwrqQHDXVDU9Qu5J5DvwpbvJRs4cNKYD5APfOBdbhylJB33bLzANab28zUS~9w0jEph10I3l9a6VNRNJasZQNjGPE9uzfS2MnG2RS0tE8kIEjJV4zV1LQgb1tb5RXljwouXmf1-OmpTMkqQT-yWG6hMF7MdAefsSOZedoPtA5D9F~lTBIpPB7kNw5251fG~uPDik2YubSck4YjzFM95xZJJWhFhko7qXeAY-tdnt9XIgWpp5JrjC0F7czl3~DH1hWrxuLSjjD9UlAu16HXYTDfrL4Sg~8OK8dFtGeRl5zo1Y4HLEDvuP4efMA__" alt="Rush Delivery">
-                    </div>
-                    <div class="service-content">
-                        <h3>Express Delivery</h3>
-                        <p>Same-Day & Express Delivery – Need urgent printing? Get your documents printed and delivered on the same day with our fast and hassle-free service. Perfect for last-minute assignments, official documents, and urgent needs!
-
-</p>
-                        <a href="#order" class="cta-btn">Order Now</a>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </section>
@@ -959,8 +966,8 @@ header {
                 <div class="contact-card">
                     
                     <i><a style="text-decoration:none; color:white;" href="https://chat.whatsapp.com/ELYNoYxFIaC6p4ztD8WPQh" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
-</i>
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
+                    </i>
                     <h3>Join Watsapp groupe</h3>
                     <p>Click here</p>
                 </a>
